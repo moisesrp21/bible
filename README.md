@@ -1,2 +1,2 @@
 # bible
-a simple bible website
+a simple and minimalist bible website
