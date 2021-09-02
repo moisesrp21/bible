@@ -1,0 +1,109 @@
+body {
+  background-color: black;
+}
+
+#upper {
+    padding: 20px;
+    margin: 10px 10px 10px 10px;
+    width: 100%;
+}
+
+#bottom {
+}
+
+/* Bible Button */
+.searchOff_left {
+    height: 44px;
+    transition-duration: 1s;
+    background-color: var(--bs-gray-700);
+    font-family: Adamina, serif;
+    border-color: var(--bs-gray-900);
+    padding: 4px 35px 6px 30px;
+    margin: 7px 0px 5px 0px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+/* Search Field */
+@media (min-width: 768px) {
+  .searchOn_left {
+    height: 44px;
+    transition-duration: 1s;
+    width: 100%;
+    background-color: var(--bs-gray-700);
+    font-family: Adamina, serif;
+    padding: 4px 20px 6px 13px;
+    margin: 7px 0px 5px 0px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+  }
+}
+
+.searchOn_left {
+    height: 44px;
+    transition-duration: 1s;
+    width: 595px;
+    background-color: var(--bs-gray-700);
+    border-color: var(--bs-gray-900);
+    font-family: Adamina, serif;
+    padding: 4px 20px 6px 13px;
+    margin: 7px 0px 5px 0px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+/* Version Button */
+.searchOff_right {
+    height: 44px;
+    transition-duration: 1s;
+    background-color: var(--bs-gray-700);
+    border-color: var(--bs-gray-900);
+    font-family: Adamina, serif;
+    padding: 4px 20px 6px 13px;
+    margin: 7px 0px 5px 0px;
+    border-bottom-right-radius: 4px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+/* search button */
+.searchOn_right {
+    height: 44px;
+    transition-duration: 1s;
+    width: 59px;
+    background-color: var(--bs-gray-700);
+    border-color: var(--bs-gray-900);
+    padding: 4px 20px 6px 13px;
+    margin: 7px 0px 5px 0px;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+ul {
+  list-style: none;
+  counter-reset: verse-counter;
+}
+
+ul .verse::before {
+  content: counter(verse-counter) ". ";
+  color: rgb(255,252,252);
+  font-weight: bold;
+  font-family: 'Adamina, sherif';
+}
+
+ul .verse {
+  color: #bcbcbc;
+  counter-increment: verse-counter;
+  font-size: x-large;
+}
+
+.fa.fa-search {
+  color: #000000;
+  padding: 0px 0px 0px 0px;
+}
+
+
+
