@@ -46,7 +46,8 @@ body {
     background-color: var(--bs-gray-700);
     border-color: var(--bs-gray-900);
     width: 350px;
-    overflow: auto;
+    height: 600px;
+    overflow: hidden;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
@@ -88,9 +89,6 @@ body {
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       z-index: 1;
   }
-  .dropdown-content:hover {
-      overflow-y:auto;
-  }
 
   .dropdown-content a {
       display: block;
@@ -103,6 +101,10 @@ body {
       text-decoration: none;
       transition-duration: 0.8s;
   }
+}
+
+.dropdown-content:hover {
+    overflow-y:auto;
 }
 
 /* Version Button */
