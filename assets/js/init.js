@@ -7,7 +7,7 @@ let theChapter = "1";
 document.addEventListener('click',(event) => {
     let target = event.target;
     console.log(target);
-    // console.log(target.classList.contains("book"));
+    console.log(target.classList);
     if (target.classList.contains("book")) {
         //change book btn =>  back button
         target.className = "back";
@@ -16,7 +16,7 @@ document.addEventListener('click',(event) => {
         let right = document.getElementById("Right");
         right.className = "search_bar";
         right.type = "search";
-        right.value = "Search.."
+        right.placeholder = "Search..";// value = "Search.."
         //add books to drop down
         let dropdown = document.getElementById("theDropdown");
         dropdown.style.display = "block";
