@@ -12,7 +12,7 @@ body {
 }
 
 /* Bible Button */
-.searchOff_left {
+.book {
     height: 44px;
     transition-duration: 1s;
     background-color: var(--bs-gray-700);
@@ -24,8 +24,21 @@ body {
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
+/* Version Button */
+.version {
+    height: 44px;
+    transition-duration: 1s;
+    background-color: var(--bs-gray-700);
+    border-color: var(--bs-gray-900);
+    font-family: Adamina, serif;
+    padding: 4px 20px 6px 13px;
+    margin: 7px 0px 5px 0px;
+    border-bottom-right-radius: 4px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
 
-.searchOn_left {
+.search_bar {
     height: 44px;
     transition-duration: 1s;
     width: 350px;
@@ -35,8 +48,11 @@ body {
     padding: 4px 20px 6px 13px;
     margin: 7px 0px 5px 0px;
     border-bottom-right-radius: 4px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    /* border-bottom-right-radius: 4px; */
+    /* border-top-left-radius: 20px; */
+    /* border-bottom-left-radius: 20px; */
 }
 
 .dropdown-content {
@@ -52,7 +68,7 @@ body {
     z-index: 1;
 }
 
-.dropdown-content a {
+.dropdown-content .book_option {
     display: block;
     width: 350px;
     color: black;
@@ -64,10 +80,32 @@ body {
     transition-duration: 0.8s;
 }
 
-
-/* Search Field */
+.dropdown-content .chapter_option {
+    color: black;
+    padding: 5px 15px;
+    margin: 3px 3px 3px 3px;
+    background-color: var(--bs-gray-700);
+    border-color: var(--bs-gray-900);
+    border-radius: 30px;
+    font-family: Adamina, serif;
+    text-decoration: none;
+}
+.chapters {
+    height: 44px;
+    transition-duration: 0.8s;
+    width: 350px;
+    background-color: var(--bs-gray-700);
+    border-color: var(--bs-gray-900);
+    font-family: Adamina, serif;
+    padding: 4px 20px 6px 13px;
+    margin: 7px 0px 5px 0px;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+/* for smaller devices */
 @media (min-width: 768px) {
-  .searchOn_left {
+  .search_bar {
     height: 44px;
     transition-duration: 0.8s;
     width: 595px;
@@ -75,8 +113,25 @@ body {
     font-family: Adamina, serif;
     padding: 4px 20px 6px 13px;
     margin: 7px 0px 5px 0px;
-    border-bottom-left-radius: 20px;
-    border-top-left-radius: 20px;
+    /* border-bottom-left-radius: 20px; */
+    /* border-top-left-radius: 20px; */
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  .chapters {
+      height: 44px;
+      transition-duration: 0.8s;
+      width: 595px;
+      background-color: var(--bs-gray-700);
+      font-family: Adamina, serif;
+      padding: 4px 20px 6px 13px;
+      margin: 7px 0px 5px 0px;
+      /* border-bottom-left-radius: 20px; */
+      /* border-top-left-radius: 20px; */
+      border-bottom-right-radius: 4px;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
   }
   .dropdown-content {
       display: none;
@@ -90,7 +145,7 @@ body {
       z-index: 1;
   }
 
-  .dropdown-content a {
+  .dropdown-content .book_option {
       display: block;
       width: 595px;
       color: black;
@@ -107,32 +162,35 @@ body {
     overflow-y:auto;
 }
 
-/* Version Button */
-.searchOff_right {
-    height: 44px;
-    transition-duration: 1s;
-    background-color: var(--bs-gray-700);
-    border-color: var(--bs-gray-900);
-    font-family: Adamina, serif;
-    padding: 4px 20px 6px 13px;
-    margin: 7px 0px 5px 0px;
-    border-bottom-right-radius: 4px;
-    border-bottom-right-radius: 20px;
-    border-top-right-radius: 20px;
-}
 
 /* search button */
-.searchOn_right {
+/* .searchOn_right { */
+/*     height: 44px; */
+/*     transition-duration: 1s; */
+/*     width: 59px; */
+/*     background-color: var(--bs-gray-700); */
+/*     border-color: var(--bs-gray-900); */
+/*     padding: 4px 20px 6px 13px; */
+/*     margin: 7px 0px 5px 0px; */
+/*     border-bottom-right-radius: 4px; */
+/*     border-top-right-radius: 20px; */
+/*     border-bottom-right-radius: 20px; */
+/* } */
+
+.back {
     height: 44px;
-    transition-duration: 1s;
+    transition-duration: 0.8s;
     width: 59px;
     background-color: var(--bs-gray-700);
     border-color: var(--bs-gray-900);
     padding: 4px 20px 6px 13px;
     margin: 7px 0px 5px 0px;
+    /* border-bottom-right-radius: 4px; */
+    /* border-top-right-radius: 20px; */
+    /* border-bottom-right-radius: 20px; */
     border-bottom-right-radius: 4px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
 ul {
