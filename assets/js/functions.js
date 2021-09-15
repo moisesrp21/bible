@@ -46,10 +46,60 @@ function changeToStateThree(target) {
 
 function changeToStateOne(target) {
     //get the new book and new chapter
-    //make a get request to api
-    // go to STATE 1 with new information;
     theNewChapter = target.innerHTML;
+    //make a get request to api
+    theNewBook.replace(" ", "_");
     console.log("fetch = > (" + theNewBook + ", " + theNewChapter + ")");
+    // ExamplpostDatae POST method implementation:
+    request("http://localhost:8080/initialPageTest/bible/api/",{book: theNewBook.replace(" ", "_")}).then(data => {
+        newBook = data;
+        // go to STATE 1 with new information;
+        let verses_content = document.getElementById("verses-content");
+        verses_content.innerHTML = "";
+
+        let verse;
+        console.log(newBook === undefined);
+        for (let i = 0; i < newBook[theNewBook][theNewChapter].length; i++){
+            verse = document.createElement('li');
+            verse.className = "verse";
+            verse.textContent = newBook[theNewBook][theNewChapter][i];
+            verses_content.appendChild(verse);
+        }
+        let left = document.getElementById("Left");
+        left.className = "book";
+        left.innerHTML = theBook + " " + theChapter;
+        // right btn => version
+        let right = document.getElementById("Right");
+        right.className = "version";
+        right.type = "button";
+        right.value = "RV1960";
+        let dropdown = document.getElementById("theDropdown");
+        dropdown.innerHTML = "";
+        dropdown.style.padding = "0px 0px 0px 0px";
+        dropdown.style.display = "none";
+        theBook = theNewBook;
+        theChapter = theNewChapter;
+        theNewBook = "";
+        theNewChapter = "";
+    });
+}
+
+async function request(url = '', data = {}) {
+    // Default options are marked with *
+    const response = await fetch(url, {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, *cors, same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'omit', // include, *same-origin, omit
+        headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        redirect: 'follow', // manual, *follow, error
+        referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+        body: JSON.stringify(data) // body data type must match "Content-Type" header
+    });
+    return response.json(); // parses JSON response into native JavaScript objects
 }
 
 function goToPreviewsState() {
@@ -81,4 +131,3 @@ function goToPreviewsState() {
         console.log("WARNING: STATE:" + STATE);
     }
 }
-
