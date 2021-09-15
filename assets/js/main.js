@@ -1,6 +1,7 @@
 let theBook = "Salmos";
 let theChapter = 1;
 let theNewBook = "";
+let newBook;
 let theNewChapter = "";
 let STATE = 0; // 1 => it shows the book and version
                // 2 => it shows back btn and search bar
