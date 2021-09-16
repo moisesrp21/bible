@@ -47,21 +47,18 @@ function changeToStateOne(target) {
     //get the new book and new chapter
     theNewChapter = target.innerHTML;
     //make a get request to api
-    theNewBook.replace(" ", "_");
     console.log("fetch = > (" + theNewBook + ", " + theNewChapter + ")");
     // ExamplpostDatae POST method implementation:
-    request("http://localhost:8080/initialPageTest/bible/api/",{book: theNewBook.replace(" ", "_")}).then(data => {
+    request("https://moisesrp.dev/bible/api",{book: theNewBook.replace(" ", "_")}).then(data => {
         newBook = data;
         // go to STATE 1 with new information;
         let verses_content = document.getElementById("verses-content");
         verses_content.innerHTML = "";
-
         let verse;
-        console.log(newBook === undefined);
-        for (let i = 0; i < newBook[theNewBook][theNewChapter].length; i++){
+        for (let i = 0; i < newBook[theNewChapter-1].length; i++){
             verse = document.createElement('li');
             verse.className = "verse";
-            verse.textContent = newBook[theNewBook][theNewChapter][i];
+            verse.textContent = newBook[theNewChapter-1][i];
             verses_content.appendChild(verse);
         }
         let left = document.getElementById("Left");
