@@ -14,6 +14,7 @@ function changeToStateTwo(target) {
     let dropdown = document.getElementById("theDropdown");
     dropdown.innerHTML = "";
     dropdown.className = "dropdown-content-books";
+    dropdown.focus();
     let book;
     for (let i = 0; i<books.name.length; i++){
         book = document.createElement('a');
