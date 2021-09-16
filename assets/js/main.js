@@ -43,6 +43,7 @@ document.addEventListener('click',(event) => {
         break;
     default:
         console.log("user clicked elsewhere");
+        resetState();
     }
     console.log("=====");
 });

@@ -13,7 +13,7 @@ function changeToStateTwo(target) {
     //add books to drop down
     let dropdown = document.getElementById("theDropdown");
     dropdown.innerHTML = "";
-    dropdown.style.display = "block";
+    dropdown.className = "dropdown-content-books";
     let book;
     for (let i = 0; i<books.name.length; i++){
         book = document.createElement('a');
@@ -28,8 +28,7 @@ function changeToStateThree(target) {
     theNewBook = target.innerHTML;
     let dropdown = document.getElementById("theDropdown");
     dropdown.innerHTML = "";
-    dropdown.style.display = "block";
-    dropdown.style.padding = "12px 14px 12px 14px";
+    dropdown.className = "dropdown-content-chapters";
     let number;
     for (let i = 1; i<=books[theNewBook]; i++){
         number  = document.createElement('button');
@@ -67,6 +66,10 @@ function changeToStateOne(target) {
         }
         let left = document.getElementById("Left");
         left.className = "book";
+        theBook = theNewBook;
+        theChapter = theNewChapter;
+        theNewBook = "";
+        theNewChapter = "";
         left.innerHTML = theBook + " " + theChapter;
         // right btn => version
         let right = document.getElementById("Right");
@@ -75,12 +78,7 @@ function changeToStateOne(target) {
         right.value = "RV1960";
         let dropdown = document.getElementById("theDropdown");
         dropdown.innerHTML = "";
-        dropdown.style.padding = "0px 0px 0px 0px";
-        dropdown.style.display = "none";
-        theBook = theNewBook;
-        theChapter = theNewChapter;
-        theNewBook = "";
-        theNewChapter = "";
+        dropdown.className = "no-dropdown";
     });
 }
 
@@ -110,8 +108,7 @@ function goToPreviewsState() {
         // hide dropdown
         let dropdown = document.getElementById("theDropdown");
         dropdown.innerHTML = "";
-        dropdown.style.padding = "0px 0px 0px 0px";
-        dropdown.style.display = "none";
+        dropdown.className = "no-dropdown";
         // left btn => book
         let left = document.getElementById("Left");
         left.className = "book";
@@ -130,4 +127,21 @@ function goToPreviewsState() {
     default:
         console.log("WARNING: STATE:" + STATE);
     }
+}
+
+function resetState() {
+    STATE = 1;
+    // hide dropdown
+    let dropdown = document.getElementById("theDropdown");
+    dropdown.innerHTML = "";
+    dropdown.className = "no-dropdown";
+    // left btn => book
+    let left = document.getElementById("Left");
+    left.className = "book";
+    left.innerHTML = theBook + " " + theChapter;
+    // right btn => version
+    let right = document.getElementById("Right");
+    right.className = "version";
+    right.type = "button";
+    right.value = "RV1960";
 }

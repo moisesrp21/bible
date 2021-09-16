@@ -1,0 +1,196 @@
+body {
+    background-color: rgb(33,33,33);
+}
+
+#upper {
+    padding: 20px;
+    margin: 10px 10px 10px 10px;
+}
+
+.book {
+    height: 44px;
+    transition-duration: 0.7s;
+    color: white;
+    background-color: #4CAF50;
+    font-family: Adamina, serif;
+    border: none;
+    padding: 4px 35px 6px 30px;
+    margin: 7px 2px 5px 2px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.version {
+    height: 44px;
+    transition-duration: 0.7s;
+    color: white;
+    background-color: #4CAF50;
+    font-family: Adamina, serif;
+    padding: 4px 20px 6px 13px;
+    margin: 7px 2px 5px 2px;
+    border: none;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.back {
+    height: 44px;
+    transition-duration: 0.7s;
+    width: 59px;
+    background-color: #4CAF50;
+    padding: 4px 20px 6px 13px;
+    margin: 7px 2px 5px 2px;
+    border: none;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+ul {
+    list-style: none;
+    counter-reset: verse-counter;
+}
+
+ul .verse::before {
+    content: counter(verse-counter) ". ";
+    color: rgb(255,252,252);
+    font-weight: bold;
+    font-family: 'Adamina, sherif';
+}
+
+ul .verse {
+    color: #bcbcbc;
+    counter-increment: verse-counter;
+    font-size: x-large;
+}
+
+.no-dropdown {
+    display: none;
+}
+
+@media (min-width: 768px) { /*for devices with screens bigger than 768px */
+    .search_bar {
+        height: 44px;
+        transition-duration: 0.8s;
+        width: 595px;
+        color: white;
+        background-color: #4CAF50;
+        font-family: Adamina, serif;
+        padding: 4px 20px 6px 13px;
+        margin: 7px 2px 5px 2px;
+        border: none;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+
+    .dropdown-content-books {
+        display: block;
+        position: absolute;
+        background-color: var(--bs-gray-700);
+        border: none;
+        width: 580px;
+        height: 585px;
+        overflow: hidden;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        margin: 0px 0px 0px 3px;
+    }
+    .dropdown-content-books .book_option {
+        display: block;
+        width: 595px;
+        color: white;
+        padding: 12px 16px;
+        background-color: var(--bs-gray-700);
+        border: none;
+        font-family: Adamina, serif;
+        text-decoration: none;
+    }
+    .chapters {
+        height: 44px;
+        transition-duration: 0.7s;
+        width: 595px;
+        font-family: Adamina, serif;
+        background-color: #4CAF50;
+        padding: 4px 20px 6px 13px;
+        margin: 7px 2px 5px 2px;
+        border: none;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    .dropdown-content-chapters {
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto;
+        grid-gap: 20px;
+        padding: 20px 20px 20px 30px;
+        position: absolute;
+        width: 580px;
+        margin: 0px 0px 0px 3px;
+        border: none;
+        background-color: var(--bs-gray-700);
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+    .dropdown-content-chapters .chapter_option {
+        color: black;
+        padding: 5px 5px 5px 5px;
+        margin: 3px 3px 3px 3px;
+        background-color: #4CAF50;
+        border: none;
+        font-family: Adamina, serif;
+        text-decoration: none;
+        text-align: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px; 
+    }
+    .dropdown-content-chapters .chapter_option:hover {
+        background-color: #3E8E41;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        transition: 0.2s;
+        width: 53px;
+        height: 53px;
+        margin: 0px 0px 0px 0px;
+    }
+}
+
+
+.version:hover {
+    background-color: #3E8E41;
+}
+
+.dropdown-content-books:hover {
+    overflow-y:auto;
+}
+
+.dropdown-content-chapters:hover {
+    overflow-y:auto;
+}
+.book:hover {
+    background-color: #3E8E41;
+}
+
+.book_option:hover {
+    /* background-color: #415041;/\* new 507350 *\/ /\* new 415041 *\/ */
+    background-color: #3E8E41;
+}
+
+.back:hover {
+    background-color: #3E8E41;
+}
+
+.search_bar:hover {
+    background-color: #3E8E41;
+}
+
+.search_bar::placeholder {
+    /* color: #3E8E41; */
+    /* color: #5aa85e; */
+    color: #87b589;
+}
