@@ -1,7 +1,8 @@
 ![cover](./assets/img/cover.png)
 #### About this project
-I started this project to because I thought many bible websites were bloated with features and ads 
-and I wanted to play with javascript and how it modifies the DOM.
+I started this project because I wanted a minimalistic bible website.
+Please: if you find any bugs or thinks you can help making it better,
+then open an Issues or make a Pull Request.
 
 ## Check It Out
 See the this project running at [moisesrp.dev](https://moisesrp.dev/bible)
