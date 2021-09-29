@@ -1,3 +1,6 @@
+.no-scroll {
+    overflow: hidden;
+}
 .search_bar {
     height: 44px;
     transition-duration: 0.8s;
@@ -17,9 +20,9 @@
     position: absolute;
     background-color: var(--bs-gray-700);
     border: none;
-    width: 330px;
+    width: 310px;
     height: 585px;
-    overflow: hidden;
+    overflow: scroll;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     border-top-right-radius: 4px;
