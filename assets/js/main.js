@@ -33,14 +33,17 @@ document.addEventListener('click',(event) => {
 
     case "search_bar":
         break;
+
     case "book_option":
         STATE = 3;
         console.log("go to state 3");
         changeToStateThree(target);
         break;
+
     case "chapter_option":
         changeToStateOne(target);
         break;
+
     default:
         console.log("user clicked elsewhere");
         resetState();

@@ -5,7 +5,6 @@ function lockBody() {
 }
 function unLockBody() {
     let body = document.getElementById("theBody");
-    console.log(body==null);
     body.className = "";
 }
 
@@ -61,7 +60,7 @@ function changeToStateOne(target) {
     theNewChapter = target.innerHTML;
     //make a get request to api
     console.log("fetch = > (" + theNewBook + ", " + theNewChapter + ")");
-    // ExamplpostDatae POST method implementation:
+    //  POST method implementation:
     request("https://moisesrp.dev/bible/api",{book: theNewBook.replace(" ", "_")}).then(data => {
         newBook = data;
         // go to STATE 1 with new information;
@@ -90,6 +89,7 @@ function changeToStateOne(target) {
         dropdown.innerHTML = "";
         dropdown.className = "no-dropdown";
     });
+    unLockBody();
 }
 
 async function request(url = '', data = {}) {
