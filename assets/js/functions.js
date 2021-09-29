@@ -1,4 +1,16 @@
+
+function lockBody() {
+    let body = document.getElementById("theBody");
+    body.className = "no-scroll";
+}
+function unLockBody() {
+    let body = document.getElementById("theBody");
+    console.log(body==null);
+    body.className = "";
+}
+
 function changeToStateTwo(target) {
+    lockBody();
     if (target !== undefined) {
         //change book btn =>  back button
         target.className = "back";
@@ -129,6 +141,7 @@ function goToPreviewsState() {
 
 function resetState() {
     STATE = 1;
+    unLockBody();
     // hide dropdown
     let dropdown = document.getElementById("theDropdown");
     dropdown.innerHTML = "";
