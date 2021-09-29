@@ -61,7 +61,7 @@ function changeToStateOne(target) {
     //make a get request to api
     console.log("fetch = > (" + theNewBook + ", " + theNewChapter + ")");
     //  POST method implementation:
-    request("https://moisesrp.dev/bible/api",{book: theNewBook.replace(" ", "_")}).then(data => {
+    request("https://moisesrp.dev/bible/api",{book: theNewBook.replace(/ /g, "_")}).then(data => {
         newBook = data;
         // go to STATE 1 with new information;
         let verses_content = document.getElementById("verses-content");
