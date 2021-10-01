@@ -113,6 +113,7 @@ async function request(url = '', data = {}) {
 function goToPreviewsState() {
     switch(STATE) {
     case 2:
+        unLockBody();
         console.log("going from 2 to 1");
         STATE = 1;
         // hide dropdown
